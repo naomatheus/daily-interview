@@ -44,8 +44,10 @@ def ip_addresses(ip_str, ip_parts=[]):
     # for i in ip_str:
     #     if i >= 0:
             
-        
+        # https://www.geeksforgeeks.org/python-concatenate-two-lists-element-wise/
 
+
+#####    ## IF part_b goes beyond length of 4, start the loop over and reconcat the #s 
 
     # # >>> ['159.255.101.3', '159.255.10.13']
     return ip_str

@@ -7,10 +7,10 @@
 
 # Input: 1592551013 
 # Output: ['159.255.101.3', '159.255.10.13']
-
+part_a = []
 def first_check(str):
       ## convert string portion to int
-    part_a = []
+    
     for i in str:
         ip_int = int(i, base=10)
         
@@ -18,27 +18,37 @@ def first_check(str):
         if ip_int < 2 and ip_int != 0:
             # this is the IP fail condition, if a list like this cannot be created, then a final IP is not possible
             part_a.append(ip_int)
-            # print(part_a)
+            print(part_a)
         if len(part_a) == 0:
             return 'IP address could not be made'
-    return part_a
+    return str
 
-        
-print(first_check('1592551013'))
-print(first_check('9569459694569'))
+# print(first_check('1592551013'))
+# print(first_check('9569459694569'))
 
-def ip_addresses(first_check, ip_parts=[]):
+## ip addresses takes in a verified string, verified to ensure it can become an ip address, else returns cannot be made
+
+
+def ip_addresses(ip_str, ip_parts=[]):
     # Fill this in. print ip_addresses('1592551013') 
     # parts a, b, c, ,d 
-    ip = []
-    part_a = []
-    for i in str:
-        ip_int = int(i, base=10)
-        if ip_int < 2 and ip_int != 0:
-            part_a.append(ip_int)
-            print(part_a)
- 
+    print(ip_str,'<-- passed')
+    ## append another number to each index in the part_a, if that number will not exceed value of 255.
+    for j in part_a:
+        j = str(j)
+        
+        print(type(j))
+        
+    part_b = [k + j for k in ip_str]
+    print(part_b, '<-- part b')
+    # for i in ip_str:
+    #     if i >= 0:
+            
+        
+
+
     # # >>> ['159.255.101.3', '159.255.10.13']
+    return ip_str
 
-# ip_addresses('1592551013')
 
+print(ip_addresses(first_check('1592551013')))

@@ -5,8 +5,18 @@
 
 # Keep in mind that integers can't start with a 0! (except for 0)
 
-# Input: 1592551013 
-# Output: ['159.255.101.3', '159.255.10.13']
+Input: 159.2551013 
+1250250250
+125.0.250.250
+
+Output: ['159.255.101.3', '159.255.10.13']
+
+159.255.101.3 
+159.255.10.13 
+
+
+
+
 part_a = []
 def first_check(str):
       ## convert string portion to int
@@ -19,7 +29,7 @@ def first_check(str):
             # this is the IP fail condition, if a list like this cannot be created, then a final IP is not possible
             part_a.append(ip_int)
             print(part_a)
-        if len(part_a) == 0:
+        if len(part_a) == 0 or len(part_a) < 4:
             return 'IP address could not be made'
     return str
 

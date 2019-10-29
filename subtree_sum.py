@@ -24,7 +24,7 @@
 
 
 class Node():
- def __init__(self, value, left=N
+ def __init__(self, value, left=N):
     self.val = value
     self.left = left
     self.right = right

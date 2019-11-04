@@ -17,6 +17,8 @@ KAPREKAR_CONSTANT = 6174
 
 def num_kaprekar_iterations(n):
 	
+	num_kaprekar_iterations.count += 1
+	
 	# split into a list
 	n_string = str(n)
 	n_list = []
@@ -27,7 +29,7 @@ def num_kaprekar_iterations(n):
 	n_asc = sorted(n_list)
 	n_dsc = sorted(n_list, reverse=True) 
 	# recombine both and convert to ints both
-	j = '' #j is used an joining element
+	j = '' #j is used as joining element
 	n_asc_int = int(j.join(n_asc))
 	n_dsc_int = int(j.join(n_dsc))
 	
@@ -46,22 +48,24 @@ def num_kaprekar_iterations(n):
 	# multiply by power of 10 until number is 4 digits in length
 	
 	# print(n_dsc_int)
+	# subtract as per constant's function requirements
 	one_kap = (n_dsc_int - n_asc_int)
 	# print(one_kap)
 
 	n = one_kap
 	# print(n, 'first kap')
 
-	if n == 6174:
+
+	if n == KAPREKAR_CONSTANT:
 		return n
 	else:
-		return num_kaprekar_iterations(n)
+		# iter_count += iter_count + 1
+		
+		num_kaprekar_iterations(n)
+		return num_kaprekar_iterations.count 
 
-	# return
- 
 
-
-
+num_kaprekar_iterations.count = 0
 print(num_kaprekar_iterations(123))
 
 
@@ -70,3 +74,14 @@ print(num_kaprekar_iterations(123))
 # 3210 - 123 = 3087
 # 8730 - 0378 = 8352
 # 8532 - 2358 = 6174 (3 iterations)
+
+# RESOURCES 
+# Python obj.join() method 
+# https://www.geeksforgeeks.org/join-function-python/
+
+# Python math to count 'integer length'
+# https://stackoverflow.com/questions/2189800/length-of-an-integer-in-python
+
+# Counter implementation through opp
+# https://stackoverflow.com/questions/21716940/is-there-a-way-to-track-the-number-of-times-a-function-is-called
+

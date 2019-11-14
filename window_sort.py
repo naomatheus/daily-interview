@@ -22,7 +22,7 @@ def min_window_to_sort(nums):
 	i = 0
 	j = 0
 	return_tuple = [0,0]
-	pointer = 0
+	k = 0
 
 	
 	#if the list is sorted return (0,0)
@@ -33,43 +33,39 @@ def min_window_to_sort(nums):
 		## find the unsorted integer
 		while nums[i] > nums[j+1]:
 			# compare with (< or >) the first unsorted int with the next int
-			pointer = i
+			
 			print(f'{i} is position of first unsorted int')
-			return_tuple[0] = pointer
+			return_tuple[0] = i
 			
 			i+=1
 			j+=1
-			# return return_tuple
 			
 			# if j is not sorted (less than the i), store the position of the unsorted int as position 0 in the tuple, 
-			pointer+=1
-			# then iterate the pointer
-			while nums[j+1] > nums[i]:
-				print('2nd while')
-				if nums[j+1] > nums[i]:
-					print('this if')
-					print(nums[j-1])
-					nums[j-1] = return_tuple[1]
+			k=j+1
+			# then iterate the k
+			while nums[j+1] > nums[k+1]:
+				
+				print(nums[j+1], 'numsj+1')
+				k+=1
+				print(nums[k],'numsk')
+				
+			if nums[k] > nums[j]:
+				return_tuple[1] = k
 					
-					return return_tuple
+				return return_tuple
 
 		# if nums[i] < nums[j+1] or i >= len(nums):
-		# 	# if the j is greater than i (sorted), iterate the pointer and continue until j is less than i 
-		# 	i+=1
-		# 	j+=1
-		# 	pointer+=1
-		# 	# print(nums[i])
-		# 	return 
-		# 	if i >= len(nums):
-		# 		return 'list is sorted'
+		# 	# if the j is greater than i (sorted), iterate the k and continue until j is less than i 
+		
 
 
 
 
-	# continue iterating the pointer, as the pointer continues, assign the position of the pointer to the 1 position in the tuple
+	# continue iterating the k, as the k continues, assign the position of the k to the 1 position in the tuple
 
 	# if j is greater than the i, assign the i position to position 1 of the tuple, minus 1.
 
  
 print(min_window_to_sort([2,4,7,5,6,8,9]))
 	# (2, 4)
+print(min_window_to_sort([2,3,4,7,5,9,6,10]))

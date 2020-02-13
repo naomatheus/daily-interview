@@ -3,6 +3,8 @@
 # a majority element is an element that appears more than half time. Given a list with a majority element, find the majority element. 
 
 test_list = [3,5,3,3,2,4,3]
+test_list2 = [4,5,6,2,2,2,4,5]
+test_list3 = [1,2,3,4,5]
 
 def majority_element(nums):
 	 
@@ -27,9 +29,12 @@ def majority_element(nums):
 	for k,v in count.items():
 
 		if v == max(count.values()):
-
+			next
+		if v.all() == v.all()
 			return k
 		
 	return max(count.values())
 
 print(majority_element(test_list))
+print(majority_element(test_list2))
+print(majority_element(test_list3))

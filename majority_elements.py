@@ -4,7 +4,7 @@
 
 test_list = [3,5,3,3,2,4,3]
 test_list2 = [4,5,6,2,2,2,4,5]
-test_list3 = [1,2,3,4,5]
+test_list3 = [1,2,3,4,7]
 
 def majority_element(nums):
 	 
@@ -18,19 +18,21 @@ def majority_element(nums):
 	for num in nums:
 
 		if num not in count:
-			
-			count[num] = 1
-			
+			count[num] = 0
 		else: 
 			# num in count + 1
 			count[num] += 1	
-		
 		# find the key that has max(count.values)
 	for k,v in count.items():
 
-		if v == max(count.values()):
-			next
-		if v.all() == v.all()
+		## if all values within  countare the same, then no majority element 
+
+		## case where each v is one
+		
+		## case where only one number is in nums array 
+			
+		if v == max(count.values()):	
+			
 			return k
 		
 	return max(count.values())

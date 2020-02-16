@@ -18,16 +18,35 @@ def searchMatrix(mat, value):
 
 
 	# improve: 
-
 	## abstract, rows as row_num. 
 	#next row, if value is less than current row_num[i], value is not in next row_num[i+1]. Can return False
 
-	# if value is greater than row_num[i][-1], then search next row row_num[i+1], 
+	for row_num, row in enumerate(mat):
+		last_num_in_row = mat[row_num][len(row)-1]
+		print(last_num_in_row)
+
+		if value == last_num_in_row:
+			return True
+
+		if value < last_num_in_row:
+			
+			next 
+			next_row = mat[row_num+1]
+			row = next_row
+			
+			return False, 'first false'
+		# get to last val of each row
+		elif value > last_num_in_row:
+			next
+			for idx, num in enumerate(row):
+				if value == num:
+					return True
+
+	# if value is greater than last_num_in_row, then search next row row_num[i+1], 
 	# next row is now current row_num[i]
 
+
 	## access each row of the matrix
-	for row_num, row in enumerate(mat):
-		# print(row_num,row)
 
 		for idx,num in enumerate(row):
 			# while iterating each indv row of the matrix, check for equality with value
@@ -36,6 +55,7 @@ def searchMatrix(mat, value):
 
 			else:
 				next
+				
 			# if value not present in any row, return False
 
 	return False			
